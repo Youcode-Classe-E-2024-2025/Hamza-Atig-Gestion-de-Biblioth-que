@@ -36,3 +36,5 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::post('/addbook', [BookController::class, 'store'])->name('addbook');
 
+Route::delete('/removebook/{book}', [BookController::class, 'destroy'])->name('destroy');
+

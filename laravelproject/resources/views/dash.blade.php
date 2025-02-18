@@ -61,7 +61,7 @@
                         <img src="{{ $book->image_link }}" alt="{{ $book->title }}" class="w-full h-48 object-cover mt-2 rounded">
                         <div class="mt-4 flex items-center justify-between">
                             <a href="/editbook/{{ $book->id }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Edit</a>
-                            <form action="/removebook/{{ $book->id }}" method="POST">
+                            <form action="{{ route('destroy', $book->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Remove</button>

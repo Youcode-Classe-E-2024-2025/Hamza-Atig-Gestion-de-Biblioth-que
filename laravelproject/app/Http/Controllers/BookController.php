@@ -86,8 +86,12 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Book $book)
+    public function destroy(Request $request, Book $book)
     {
+        $request->validate([
+            '_method' => 'required|in:DELETE',
+        ]);
+
         $book->delete();
 
         return redirect()->route('dash')->with('success', 'Book deleted successfully!');
