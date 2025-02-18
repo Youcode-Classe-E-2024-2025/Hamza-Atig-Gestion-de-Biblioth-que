@@ -60,7 +60,7 @@
                         <p class="text-gray-600">{{ $book->description }}</p>
                         <img src="{{ $book->image_link }}" alt="{{ $book->title }}" class="w-full h-48 object-cover mt-2 rounded">
                         <div class="mt-4 flex items-center justify-between">
-                            <a href="/editbook/{{ $book->id }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Edit</a>
+                            <a href="{{ route('books.edit', $book) }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Edit</a>
                             <form action="{{ route('destroy', $book->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
