@@ -47,17 +47,18 @@
                     <a href="/login" class="text-white hover:underline">Log in</a>
                 </p>
 
-                <form class="space-y-4">
+                <form action="/register" method="POST" class="space-y-4">
+                    @csrf
                     <div class="flex flex-col md:flex-row gap-4">
-                        <input type="text" placeholder="First name"
+                        <input type="text" name="first_name" placeholder="First name"
                             class="w-full md:w-1/2 bg-[#1c1c24] text-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-600">
-                        <input type="text" placeholder="Last name"
+                        <input type="text" name="last_name" placeholder="Last name"
                             class="w-full md:w-1/2 bg-[#1c1c24] text-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-600">
                     </div>
-                    <input type="email" placeholder="Email"
+                    <input type="email" name="email" placeholder="Email"
                         class="w-full bg-[#1c1c24] text-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-600">
                     <div class="relative">
-                        <input type="password" placeholder="Enter your password"
+                        <input type="password" name="password" placeholder="Enter your password"
                             class="w-full bg-[#1c1c24] text-white rounded-lg p-3 pr-10 focus:outline-none focus:ring-2 focus:ring-purple-600">
                         <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
