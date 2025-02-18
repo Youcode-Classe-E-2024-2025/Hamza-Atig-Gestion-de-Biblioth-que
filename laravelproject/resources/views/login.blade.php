@@ -47,11 +47,12 @@
                     <a href="/register" class="text-white hover:underline">Sign Up</a>
                 </p>
 
-                <form class="space-y-4">
-                    <input type="email" placeholder="Email"
+                <form action="/login" method="post" class="space-y-4">
+                    @csrf
+                    <input type="email" name="email" placeholder="Email"
                         class="w-full bg-[#1c1c24] text-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-600">
                     <div class="relative">
-                        <input type="password" placeholder="Enter your password"
+                        <input type="password" name="password" placeholder="Enter your password"
                             class="w-full bg-[#1c1c24] text-white rounded-lg p-3 pr-10 focus:outline-none focus:ring-2 focus:ring-purple-600">
                         <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
@@ -63,13 +64,6 @@
                             </svg>
                         </button>
                     </div>
-
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox"
-                            class="rounded bg-[#1c1c24] border-gray-600 text-purple-600 focus:ring-purple-600">
-                        <span class="text-gray-400">I agree to the <a href="#" class="text-white hover:underline">Terms
-                                & Conditions</a></span>
-                    </label>
 
                     <button type="submit"
                         class="w-full bg-purple-600 text-white rounded-lg p-3 hover:bg-purple-700 transition-colors">

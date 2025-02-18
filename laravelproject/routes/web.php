@@ -24,3 +24,12 @@ Route::get('/login', function () {
 
 Route::get('/register', [AuthController::class, 'showRegisterForm']);
 Route::post('/register', [AuthController::class, 'register'])->name('register');
+
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+Route::get('/dash', function () {
+    return view('dash');
+})->name('dash');
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
