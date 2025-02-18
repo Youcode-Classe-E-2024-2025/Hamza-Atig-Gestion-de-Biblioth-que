@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +33,6 @@ Route::get('/dash', function () {
 })->name('dash');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::post('/addbook', [BookController::class, 'store'])->name('addbook');
 
