@@ -48,6 +48,7 @@ class AuthController extends Controller
             $user = User::where('email', $request->email)->first();
             session()->put('first_name', $user->first_name);
             session()->put('last_name', $user->last_name);
+            session()->put('email', $user->email);
 
             return redirect()->intended('/dash');
         }
